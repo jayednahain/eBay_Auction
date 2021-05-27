@@ -1,0 +1,17 @@
+{% extends 'shop_app_base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+        <p> {{ user.username }}</p>
+        <p> {{ user.email }}</p>
+        <p> {{ user.date_joined }}</p>
+    {% endif %}
+
+
+
+{% endblock body %}
