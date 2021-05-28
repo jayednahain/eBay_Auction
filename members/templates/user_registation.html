@@ -1,4 +1,5 @@
-{% extends 'shop_app_base.html' %}
+{% extends 'new_base.html' %}
+{% load static %}
 
 
 {% block title %}
@@ -23,34 +24,33 @@
 
 
 
-    <h1>user registation</h1>
-    <br>
+    <div class="col-lg-6 border border-info rounded p-4 m-3 mx-auto">
+        <h1 class="alert alert-info p-4">Create Auction Item</h1>
 
 
-    <br>
-
-    <form method="POST" action="{% url 'user_registration_link' %}">
-        {% csrf_token %}
+            <form method="POST" action="{% url 'user_registration_link' %}">
+                {% csrf_token %}
 
 
-          {% if form.errors  %}
-              <div class="alert alert-warning">
-                {% for field in form %}
-                    {% if form.errors %}
-                            {{ field.errors }}
-                    {% endif %}
-                {% endfor %}
-                  <button class="close" data-bs-dismiss="alert">
-                      <small><sup>x</sup></small>
-                  </button>
-              </div>
-          {% endif %}
+                  {% if form.errors  %}
+                      <div class="alert alert-warning">
+                        {% for field in form %}
+                            {% if form.errors %}
+                                    {{ field.errors }}
+                            {% endif %}
+                        {% endfor %}
+                          <button class="close" data-bs-dismiss="alert">
+                              <small><sup>x</sup></small>
+                          </button>
+                      </div>
+                  {% endif %}
 
 
 
-        {{ form.as_p }}
-        <input type="submit" value="Register" class="btn btn-dark">
-    </form>
+                {{ form.as_p }}
+                <input type="submit" value="Register" class="btn btn-dark">
+            </form>
+    </div>
 
 
 

@@ -1,4 +1,4 @@
-{% extends 'shop_app_base.html' %}
+{% extends 'new_base.html' %}
 {% load static %}
 
 {% block title %}
@@ -10,18 +10,16 @@
 
 
 {% block body %}
-    <h1 class="text-center">log in user</h1>
-        <ul class="form-text text-muted small">
-            <li>Your password can\’t be too similar to your other personal information.</li>
-            <li>Your password must contain at least 8 characters.</li>
-            <li>Your password can\’t be a commonly used password.</li>
-            <li>Your password can\’t be entirely numeric.</li>
-        </ul>
 
 
 
 
-    <div class="col-md-6 offset-md-3">
+
+
+    <div class="col-md-6 offset-md-3 border border-info rounded p-4">
+        <h1 class="text-center">log in user</h1>
+        <br>
+        <br>
 
 
 
@@ -31,10 +29,12 @@
                 <input type="text" class="form-control" name="username"  aria-describedby="emailHelp" placeholder="Enter username">
 
               </div>
+            <br>
 
               <div class="form-group">
                 <input type="password" class="form-control" name="password" placeholder="Password">
               </div>
+            <br>
 
               <button type="submit" class="btn btn-primary">Submit</button>
         </form>

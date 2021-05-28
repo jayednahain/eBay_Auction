@@ -1,6 +1,53 @@
-{% extends 'shop_app_base.html' %}
+{% extends 'new_base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
 
 
 {% block body %}
-    <h1>this is auction gallery</h1>
+
+
+
+
+    <div class="row gallary">
+
+
+            {% for items in data %}
+
+                <div class="col-sm-3 item_road">
+                    <div class="card " style="width: 20rem;">
+                      <img class="card-img-top" src="{{ items.main_photo.url }}" width="50%" height="50%" >
+                      <div class="card-body">
+                          <h5 class="card-title">{{ items.product_name }}</h5>
+                          <p class="card-text">{{ items.product_description | slice:":50" }}</p>
+                          <a href="{% url 'edit_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Edit</a>
+                          <a href="{% url 'singe_product_view_link' items.pk %}" class="btn btn-outline-dark btn-sm">View</a>
+                          <a href="{% url 'delete_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Delete</a>
+
+
+
+
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+
+
+
+
+    </div>
+
+
+    {% load static %}
+    <div class="test">
+        <h1>nahain</h1>
+    </div>
+
+
+
 {% endblock body %}

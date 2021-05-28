@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import messages
 
+
 # Create your views here.
 from django.contrib.auth import authenticate,login,logout
 
@@ -16,7 +17,7 @@ def loginView(request):
       if user is not None:
          login(request, user)
          messages.success(request,"logged in success fully")
-         return redirect('my_dashboard_link')
+         return redirect('auction_gallery_link')
       else:
          messages.success(request,"{} this user is not register".format(username))
          return redirect('login_page_link')
