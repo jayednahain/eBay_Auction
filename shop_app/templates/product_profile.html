@@ -67,13 +67,30 @@
            <img class="product_img" src="{{ auctionitem.photo4.url }}" width="100%" height="100%">
         </div>
 
-
-
-
-
-
-
-
     </div>
+
+    <br>
+    <h1>Bidding Auction</h1>
+     <table class="table">
+          <thead>
+            <tr>
+                <th scope="col">Author Name</th>
+                <th scope="col">Bidding Item</th>
+                <th scope="col">Published Data</th>
+                <th scope="col">Bidding Price</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for data in bidding_auction %}
+            <tr>
+                <td>{{ data.bdding_author }}</td>
+                <td>{{ data.bdding_item }}</td>
+                <td>{{ data.bidding_date }}</td>
+                <td>{{ data.Biggin_Price }}</td>
+
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
 
 {% endblock body %}

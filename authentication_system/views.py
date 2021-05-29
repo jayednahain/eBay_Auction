@@ -29,7 +29,7 @@ def loginView(request):
 def logoutView(request):
    logout(request)
    messages.success(request,("log out successfully"))
-   return redirect('home_link')
+   return redirect('auction_gallery_link')
       # Redirect to a success page.
 
 

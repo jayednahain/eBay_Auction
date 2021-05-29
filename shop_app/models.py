@@ -11,6 +11,7 @@ class AuctionItem(models.Model):
    product_description =models.TextField(max_length=400)
    product_main_price = models.IntegerField(default=0.0)
    current_bid_price = models.IntegerField(default=0.0)
+
    author =models.ForeignKey(User,on_delete=models.CASCADE)
 
    main_photo = models.ImageField(null=True,blank=True,upload_to='photos/main/%Y/%m/%d/')
@@ -33,7 +34,7 @@ class AuctionItem(models.Model):
    #likes = models.ManyToManyField(User,related_name='blog_posts')
 
    def __str__(self):
-      return self.product_name+ ' | ' + str(self.author)
+      return str(self.product_name)+ ' | ' + str(self.author)
 
    def get_absolute_url(self):
       return reverse('my_dashboard_link')
@@ -47,6 +48,19 @@ class Category(models.Model):
 
    def get_absolute_url(self):
       return reverse('home_link')
+
+
+class Bidding_auction(models.Model):
+   bdding_author = models.ForeignKey(User, on_delete=models.CASCADE)
+   bdding_item = models.ForeignKey(AuctionItem, on_delete=models.CASCADE)
+   Biggin_Price = models.IntegerField(default=0.0)
+   bidding_date = models.DateField(auto_now_add=True)
+
+
+   def __str__(self):
+      return str(self.bdding_author) +"|"+str(self.bdding_item)
+
+
 
 
 

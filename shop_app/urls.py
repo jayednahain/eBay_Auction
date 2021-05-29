@@ -7,8 +7,8 @@ from shop_app.class_based_views import createPorductView,editProductView,singleP
 
 urlpatterns = [
 
-    path('',views.homeView,name="home_link"),
-    path('gallery/',views.auctiongalleryView,name='auction_gallery_link'),
+    #path('',views.auctiongalleryView,name="home_link"),
+    path('',views.auctiongalleryView,name='auction_gallery_link'),
     path('mydashboard/',views.myDashboardView,name='my_dashboard_link'),
 
     #product CRUR operation

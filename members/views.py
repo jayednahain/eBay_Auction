@@ -3,13 +3,19 @@ from .forms import SingUpForm,UpdateUserForm,changePasswordForm
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
+from shop_app.models import AuctionItem
+
+
+
 
 
 # Create your views here.
 
 
 def profileView(request):
-   return render(request,'user_profile.html')
+   items = AuctionItem.objects.all()
+
+   return render(request,'user_profile.html',{"items":items})
 
 
 def userRegistration(request):

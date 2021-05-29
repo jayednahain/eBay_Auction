@@ -6,7 +6,7 @@ from .forms import ProductCreateFrom
 
 # Create your views here.
 def homeView(request):
-   return render(request,'shop.html')
+   return render(request, 'product_bid.html')
 
 def auctiongalleryView(request):
    data = AuctionItem.objects.all()
@@ -15,7 +15,9 @@ def auctiongalleryView(request):
 
 
 def myDashboardView(request):
-   return render(request,'my_Dashboard.html')
+   items = AuctionItem.objects.all()
+
+   return render(request,'my_Dashboard.html',{'data':items})
 
 
 def cateogryView(request,cats_name):

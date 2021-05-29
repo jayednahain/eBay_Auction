@@ -11,27 +11,33 @@
 
 
 
-    <div class="row gallary">
-
+    <div class="row"style="transition-duration: .1000s">
+    {% load static %}
 
             {% for items in data %}
 
-                <div class="col-sm-3 item_road">
-                    <div class="card " style="width: 20rem;">
-                      <img class="card-img-top" src="{{ items.main_photo.url }}" width="50%" height="50%" >
+                <div class="col-sm-3" >
+                    <div class="card p-3" style="width: 20rem;">
+                      <img class="card-img-top" src="{{ items.main_photo.url }}" style="
+                            height:300px;
+                            width:300px;
+                            object-fit: cover">
                       <div class="card-body">
-                          <h5 class="card-title">{{ items.product_name }}</h5>
+                          <h5 class="card-title">{{ items.product_name | slice:":20" }}</h5>
                           <p class="card-text">{{ items.product_description | slice:":50" }}</p>
+                          <hr class="my-4">
+                          <a>posted By {{ items.author.username }}</a><br>
+                          {% if user.is_authenticated %}
                           <a href="{% url 'edit_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Edit</a>
-                          <a href="{% url 'singe_product_view_link' items.pk %}" class="btn btn-outline-dark btn-sm">View</a>
                           <a href="{% url 'delete_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Delete</a>
-
-
-
+                          {% endif %}
+                          <a href="{% url 'singe_product_view_link' items.pk %}" class="btn btn-outline-dark btn-sm">View</a>
 
                       </div>
                     </div>
                 </div>
+                <br>
+
             {% endfor %}
 
 
@@ -44,9 +50,7 @@
 
 
     {% load static %}
-    <div class="test">
-        <h1>nahain</h1>
-    </div>
+
 
 
 

@@ -34,15 +34,20 @@ class ProductCreateFrom(forms.ModelForm):
          }),
          # 'author':forms.Select(attrs=author_style),
 
+
+
          'auction_start_time':forms.DateTimeInput(attrs={
-            'class': 'form-control',
+
          }),
 
 
 
          'acution_end_time':forms.DateTimeInput(attrs={
-            'class': 'form-control',
+
          }),
+
+
+
 
          'product_main_price': forms.TextInput(attrs={
             'class': 'form-control',

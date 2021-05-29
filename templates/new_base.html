@@ -28,42 +28,20 @@
                         <a href="#" class="img logo rounded-circle mb-5" style="">   </a>
                             <ul class="list-unstyled components mb-5">
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Account
-                                  </a>
-                                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                   <li><a  href="#">Profile</a></li>
-                                    <li><a  href="#">Singe Out</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                  </ul>
-                             </li>
 
-                                <li class="active">
-                                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
-                                        <a href="#">Home 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Home 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Home 3</a>
-                                    </li>
-                                    </ul>
-                                  </li>
-
-                                  <li>
-                                      <a href="{% url 'auction_gallery_link'%}">Auction Gallary</a>
-                                  </li>
+                                {% if user.is_authenticated %}
                                   <li>
                                   <a href="{% url 'my_dashboard_link' %}">My posted items</a>
                                   </li>
-                                  <li>
+                                <li>
 {#                                  <a href="#">Contact</a>#}
                                       <a href='{% url 'create_product_link' %}'><img src="{% static 'authentication_system/img/bag_white.png' %}" height="25px" width="25px">   Add item</a>
                                   </li>
+                                {% endif %}
+                                <li>
+                                      <a href="{% url 'auction_gallery_link'%}">Auction Gallary</a>
+                                  </li>
+
                             </ul>
                     {#	        <div class="footer">#}
                     {#	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}

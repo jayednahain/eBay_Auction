@@ -1,8 +1,9 @@
 
 from django.views.generic import DeleteView,ListView,DetailView,CreateView,UpdateView
-from .models import AuctionItem
+from .models import AuctionItem,Bidding_auction
 from .forms import ProductCreateFrom,ProductUpdateForm
 from django.urls import reverse_lazy
+
 
 
 class createPorductView(CreateView):
@@ -21,6 +22,17 @@ class editProductView(UpdateView):
 class singleProductView(DetailView):
    model = AuctionItem
    template_name = 'product_profile.html'
+
+   def get_context_data(self, *args, **kwargs):
+      bidding_auction = Bidding_auction.objects.all()
+      context = super(singleProductView, self).get_context_data(*args, **kwargs)
+
+
+      context['bidding_auction']=bidding_auction
+
+
+      return context
+
 
 
 
