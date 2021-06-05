@@ -8,3 +8,4 @@ admin.site.register(AuctionItem)
 admin.site.register(Category)
 admin.site.register(Bidding_auction)
 
+

@@ -21,6 +21,9 @@ class AuctionItem(models.Model):
    photo4 = models.ImageField(null=True,blank=True,upload_to='photos/optional/%Y/%m/%d/')
 
    item_post_date =models.DateField(auto_now_add=True)
+
+
+
    auction_start_time = models.DateTimeField(auto_now=False,null=True)
 
    acution_end_time = models.DateTimeField(auto_now=False,null=True)
@@ -51,14 +54,19 @@ class Category(models.Model):
 
 
 class Bidding_auction(models.Model):
-   bdding_author = models.ForeignKey(User, on_delete=models.CASCADE)
-   bdding_item = models.ForeignKey(AuctionItem, on_delete=models.CASCADE)
+   bdding_author_name = models.CharField(max_length=100)
+
+
+   bdding_item = models.ForeignKey(AuctionItem,related_name='biddings', on_delete=models.CASCADE)
+
+   #body
    Biggin_Price = models.IntegerField(default=0.0)
+
    bidding_date = models.DateField(auto_now_add=True)
 
 
    def __str__(self):
-      return str(self.bdding_author) +"|"+str(self.bdding_item)
+      return str(self.bdding_author_name) +"|"+str(self.bdding_item)
 
 
 

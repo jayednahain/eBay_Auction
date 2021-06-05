@@ -28,10 +28,12 @@
                           <hr class="my-4">
                           <a>posted By {{ items.author.username }}</a><br>
                           {% if user.is_authenticated %}
-                          <a href="{% url 'edit_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Edit</a>
-                          <a href="{% url 'delete_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Delete</a>
+                              {% if items.author.id == user.id %}
+                                <a href="{% url 'edit_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Edit</a>
+                                <a href="{% url 'delete_product_link' items.pk %}" class="btn btn-outline-dark btn-sm">Delete</a>
+                              {% endif %}
                           {% endif %}
-                          <a href="{% url 'singe_product_view_link' items.pk %}" class="btn btn-outline-dark btn-sm">View</a>
+                            <a href="{% url 'singe_product_view_link' items.pk %}" class="btn btn-outline-dark btn-sm">View</a>
 
                       </div>
                     </div>

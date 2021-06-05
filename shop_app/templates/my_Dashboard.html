@@ -18,10 +18,18 @@
 
                 <div class="col-sm-3" >
                         <div class="card p-3" style="width: 20rem;">
-                          <img class="card-img-top" src="{{ item.main_photo.url }}" style="
-                                height:300px;
-                                width:300px;
-                                object-fit: cover">
+                                 {% if item.main_photo.url %}
+                                     <img class="card-img-top" src="{{ item.main_photo.url }}" style="
+                                    height:300px;
+                                    width:300px;
+                                    object-fit: cover">
+                                 {% else %}
+                                     <img class="card-img-top" src="{% static 'shop_app/defult_photo/default-image-620x600.jpg' %}" style="
+                                    height:300px;
+                                    width:300px;
+                                    object-fit: cover">
+                                 {% endif %}
+
                           <div class="card-body">
                               <h5 class="card-title">{{ item.product_name | slice:":20" }}</h5>
                               <p class="card-text">{{ item.product_description | slice:":50" }}</p>

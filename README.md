@@ -42,6 +42,21 @@
   * ** cant appling any condition for specific user even for a specific product
 
   
+> ###Step3_ : (modified)
+* Fixed data base Problem
+  * Create field for author who is bidding
+  * Create filed for item which is connected with main Auction_item table by foreign key
+    
+* Fixed product profile
+  * On product profile specific biddings on specific products will shown according to the user who post the bid.
+  
+* Sort out the maximum bidding price , and  add it on top of the product profile.
+* added started auction time and end auction time
 
-    
-    
+****issues
+* cant apply any condiotion Starting date and ending data 
+* User can post multiple bid but cant edit the field
+
+
+
+

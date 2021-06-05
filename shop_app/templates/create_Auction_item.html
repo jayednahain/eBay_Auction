@@ -8,7 +8,7 @@
 
 
 {% block body %}
-    <div class="col-lg-5 border border-info rounded p-4 m-3 mx-auto">
+    <div class="col-lg-7 border border-info rounded p-4 m-3 mx-auto">
         <h1 class="alert alert-info p-4">Create Auction Item</h1>
 
     <form method="post" enctype="multipart/form-data">
@@ -21,7 +21,7 @@
 
 
      <script>
-                    var name = "{{ user.id }}"
-                    document.getElementById("id_author").value=name;
-                </script>
+         var name = "{{ user.id }}"
+         document.getElementById("id_author").value=name;
+     </script>
 {% endblock body %}
