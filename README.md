@@ -53,9 +53,6 @@
 * Sort out the maximum bidding price , and  add it on top of the product profile.
 * added started auction time and end auction time
 
-****issues
-* cant apply any condiotion Starting date and ending data 
-* User can post multiple bid but cant edit the field
 
 
 
